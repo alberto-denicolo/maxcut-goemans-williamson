@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "gwmaxcut: Goemans-Williamson Max-Cut experiments"
+authors:
+  - family-names: "De Nicolò"
+    given-names: "Alberto"
+version: 1.0.0
+date-released: 2026-11-18
+license: MIT
+repository-code: "https://github.com/alberto-denicolo/maxcut-goemans-williamson"
+references:
+  - type: thesis
+    title: "L'algoritmo di Goemans-Williamson per il MaxCut: analisi teorica e implementazione computazionale"
+    authors:
+      - family-names: "De Nicolò"
+        given-names: "Alberto"
+    thesis-type: "Bachelor's thesis"
+    institution:
+      name: "Università degli Studi di Padova"
+    year: 2024
+  - type: article
+    title: "Improved approximation algorithms for maximum cut and satisfiability problems using semidefinite programming"
+    authors:
+      - family-names: "Goemans"
+        given-names: "Michel X."
+      - family-names: "Williamson"
+        given-names: "David P."
+    journal: "Journal of the ACM"
+    volume: 42
+    issue: 6
+    year: 1995
+    doi: "10.1145/227683.227684"
