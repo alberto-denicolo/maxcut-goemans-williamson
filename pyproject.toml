@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gwmaxcut"
+version = "1.0.0"
+description = "Max-Cut: brute force, the 0.5-approximation and the Goemans-Williamson SDP algorithm, with the experiments of my bachelor thesis"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Alberto De Nicolò" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "cvxpy>=1.4",
+    "networkx>=3.0",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.5"]
+
+[project.scripts]
+gwmaxcut = "gwmaxcut.cli:main"
+
+[project.urls]
+Repository = "https://github.com/alberto-denicolo/maxcut-goemans-williamson"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
