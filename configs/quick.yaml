@@ -1,0 +1,52 @@
+# Small version of thesis.yaml: every experiment in about a minute (used by CI).
+seed: 1
+solver: null   # null = automatic: Clarabel up to n = 100, SCS above
+
+runtime:
+  n: {from: 2, to: 12}
+  p: 0.4
+  repeats: 1
+  brute_force_max_n: 12
+
+approximation:
+  n: {from: 5, to: 12}
+  p: 0.4
+  graphs: 3
+  runs: 10
+
+gw_bound:
+  n: {from: 5, to: 12}
+  p: 0.5
+  graphs: 3
+  rounds: 200
+  curve_n: 10
+
+best_of_k:
+  n: {from: 5, to: 12}
+  p: 0.5
+  graphs: 3
+  k: 10
+
+rounding_law:
+  n: 15
+  p: 0.4
+  graphs: 1
+  rounds: 2000
+
+large_n:
+  n: [20, 40]
+  p: [0.3]
+  graphs: 1
+  rounds: 200
+
+density:
+  n: 10
+  p: [0.2, 0.5, 0.8]
+  graphs: 3
+
+best_of_t:
+  n: 10
+  p: 0.5
+  graphs: 2
+  rounds: 200
+  orderings: 10

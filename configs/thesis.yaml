@@ -1,0 +1,64 @@
+# Parameters of chapter 5 of the thesis, plus the extra experiments (5-8).
+# Ranges are written as {from: a, to: b}; both ends are included.
+seed: 2024
+solver: null   # null = automatic: Clarabel up to n = 100, SCS above
+
+# 5.3.1 - running time on G(n, 0.4)
+runtime:
+  n: {from: 2, to: 25}
+  p: 0.4
+  repeats: 3
+  brute_force_max_n: 25
+
+# 5.3.2 - exact cut vs random 0.5 and GW, L = 10 graphs, M = 10 runs each
+approximation:
+  n: {from: 5, to: 25}
+  p: 0.4
+  graphs: 10
+  runs: 10
+
+# 5.3.3 - 1000 roundings per graph, limit of the running mean of cut/OPT
+gw_bound:
+  n: {from: 5, to: 25}
+  p: 0.5
+  graphs: 10
+  rounds: 1000
+  curve_n: 20
+
+# 5.3.4 - best of 10 roundings vs brute force
+best_of_k:
+  n: {from: 5, to: 25}
+  p: 0.5
+  graphs: 10
+  k: 10
+
+# Not in the thesis -----------------------------------------------------------
+
+# edge-by-edge check of P(cut) = theta / pi
+rounding_law:
+  n: 40
+  p: 0.3
+  graphs: 3
+  rounds: 20000
+
+# graphs too large for brute force: compare with the SDP upper bound
+large_n:
+  solver: SCS        # one solver for every n, so that the timings are comparable
+  n: [25, 50, 75, 100, 150, 200]
+  p: [0.1, 0.5]
+  graphs: 3
+  rounds: 1000
+
+# how the ratios depend on the edge density
+density:
+  n: 20
+  p: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+  graphs: 10
+
+# expected best-of-T ratio as a function of T
+best_of_t:
+  n: 20
+  p: 0.5
+  graphs: 10
+  rounds: 1000
+  orderings: 50
