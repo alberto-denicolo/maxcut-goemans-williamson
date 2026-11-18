@@ -7,6 +7,8 @@
 Code and experiments for my bachelor thesis *L'algoritmo di Goemans-Williamson per il MaxCut: analisi teorica e
 implementazione computazionale* (University of Padova, 2024, supervisor Prof. Alberto Chiarini; in Italian).
 
+The full text is available here: [thesis (PDF, Italian)](tesi_triennale_DeNicolo.pdf).
+
 The package implements exact Max-Cut by enumeration, the randomized 0.5-approximation and its derandomization, and
 the Goemans–Williamson algorithm (semidefinite relaxation + random-hyperplane rounding). The experiments reproduce
 chapter 5 of the thesis and add four new ones that look at *why* the algorithm works and how it behaves on graphs too
